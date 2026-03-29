@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiatao Industry - Party Products Manufacturer</title>
+    <meta name="description" content="Leading party supplies manufacturer since 2009. Balloons, pinatas, decorations. 500+ containers annually to Europe, US, Australia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e40af;
+            --primary-dark: #1e3a8a;
+            --accent: #f97316;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text .highlight {
+            color: var(--accent);
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-image-placeholder svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+
+        .hero-image-placeholder p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+
+        /* Stats Bar */
+        .stats {
+            background: var(--bg-alt);
+            padding: 3rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Section Common */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .certificates {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cert-badge {
+            background: var(--bg-alt);
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            border: 1px solid var(--border);
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: var(--bg-alt);
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed var(--border);
+        }
+
+        .image-placeholder svg {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+            opacity: 0.4;
+        }
+
+        .image-placeholder p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Products Section */
+        .products {
+            background: var(--bg-alt);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--bg);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image svg {
+            width: 50px;
+            height: 50px;
+            opacity: 0.3;
+        }
+
+        .product-image::after {
+            content: 'REPLACE IMAGE';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.7rem;
+            background: rgba(249, 115, 22, 0.9);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .product-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Story Section */
+        .story {
+            background: var(--bg);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        .timeline-content {
+            background: var(--bg-alt);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            max-width: 300px;
+            position: relative;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 4px solid var(--bg);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            right: auto;
+            left: -10px;
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Customers Section */
+        .customers {
+            background: var(--bg-alt);
+        }
+
+        .customers-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2rem;
+            align-items: center;
+            opacity: 0.6;
+        }
+
+        .customer-logo {
+            height: 60px;
+            background: var(--bg);
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item svg {
+            width: 24px;
+            height: 24px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .contact-item div h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item div p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .contact-form {
+            background: var(--bg-alt);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #e5e7eb;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .customers-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .customers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-left: 50px;
+                padding-right: 0;
+            }
+            .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -40px;
+                right: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Jiatao Industry</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#story">Story</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">☰</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>The Party <span class="highlight">Maker</span></h1>
+                <p>Direct factory manufacturer since 2009. Supplying 500+ containers annually to Europe, US, and Australia. SEDEX, BSCI, FSC certified.</p>
+                <a href="#contact" class="cta-button">Get a Quote →</a>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <path d="M21 15l-5-5L5 21"/>
+                    </svg>
+                    <p>Hero Image<br>Replace with factory/celebration photo<br>Recommended: 1920x1080px</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>16+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Containers/Year</p>
+            </div>
+            <div class="stat-item">
+                <h3>100+</h3>
+                <p>Skilled Workers</p>
+            </div>
+            <div class="stat-item">
+                <h3>$300M</h3>
+                <p>Annual Output</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Own factory building, own equipment, own design and sourcing teams</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Direct Factory Manufacturer</h3>
+                    <p>Jiatao Industry (Shanghai) Co., Ltd. has been serving global party supply markets since 2009. With our own factory building in Yiwu and Shanghai office, we control every step from design to delivery.</p>
+                    <p>Our 100+ skilled workers produce 500+ containers annually, delivering to Europe, Australia, and US markets every day.</p>
+                    <div class="certificates">
+                        <span class="cert-badge">SEDEX</span>
+                        <span class="cert-badge">BSCI</span>
+                        <span class="cert-badge">FSC</span>
+                        <span class="cert-badge">ISO9001</span>
+                        <span class="cert-badge">TESCO</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <p>Factory Photo<br>Replace with actual facility image<br>Recommended: 800x600px</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Products</h2>
+                <p>8 major categories, OEM customization available</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 12s1.5-2 4-2 4 2 4 2"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Balloons</h3>
+                        <p>Latex and foil balloons, custom printed designs available. CMYK and spot colors.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pinatas</h3>
+                        <p>Tissue/foil + cardboard construction. Custom shapes and sizes for party games.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 12h16M4 18h16M4 6h16"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bunting & Banners</h3>
+                        <p>PE and PET plastic bunting. Various shapes and sizes, recyclable materials.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Honeycomb Decorations</h3>
+                        <p>Tissue paper honeycomb balls and shapes. 6-20 inches, various colors.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tableware</h3>
+                        <p>Paper plates, napkins, cups, and straws. Food-grade materials, custom printing.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Baking Supplies</h3>
+                        <p>Paper baking cups and cake decorations. Greaseproof, oven-safe materials.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Paper Fans</h3>
+                        <p>17gsm copy paper, 6-20 inches. Dyeing, die-cutting, folding, hot stamping.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tassel Garlands</h3>
+                        <p>Tissue paper tassels in various colors and lengths. Easy assembly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story" id="story">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Story</h2>
+                <p>From local factory to global supplier</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2009</div>
+                        <p>Founded in Shanghai with 20 workers, focusing on balloon decoration.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2012</div>
+                        <p>Expanded to Yiwu factory, added paper decorations and tableware.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015</div>
+                        <p>First SEDEX and BSCI audits passed. Entered European retail market.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018</div>
+                        <p>FSC certification obtained. Launched eco-friendly product line.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021</div>
+                        <p>Annual output exceeded $200M. 100+ container monthly capacity.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025</div>
+                        <p>300M USD annual output, 500+ containers to global markets.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customers Section -->
+    <section class="customers">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted By</h2>
+                <p>Supplying major retailers across Europe, US, and Australia</p>
+            </div>
+            <div class="customers-grid">
+                <div class="customer-logo">TESCO</div>
+                <div class="customer-logo">Party City</div>
+                <div class="customer-logo">Target</div>
+                <div class="customer-logo">Walmart</div>
+                <div class="customer-logo">Carrefour</div>
+                <div class="customer-logo">Aldi</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get a quote within 24 hours</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Our Offices</h3>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <div>
+                            <h4>Shanghai Office</h4>
+                            <p>Jiatao Industry (Shanghai) Co., Ltd.<br>Shanghai, China</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <div>
+                            <h4>Yiwu Factory</h4>
+                            <p>Own factory building with 100+ workers<br>Yiwu, Zhejiang, China</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@partymaker.cn</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12h18M3 6h18M3 18h18"/>
+                        </svg>
+                        <div>
+                            <h4>Website</h4>
+                            <p>www.partymaker.cn<br>partyproducts.cn</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Company</label>
+                            <input type="text" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea name="message" placeholder="Tell us what products you're interested in..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Jiatao Industry</h3>
+                <p>The Party Maker since 2009. Direct factory manufacturer supplying 500+ containers annually to global markets.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#products">Balloons</a></li>
+                    <li><a href="#products">Pinatas</a></li>
+                    <li><a href="#products">Decorations</a></li>
+                    <li><a href="#products">Tableware</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#">Certificates</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@partymaker.cn">info@partymaker.cn</a></li>
+                    <li><a href="https://partyproducts.cn">partyproducts.cn</a></li>
+                    <li>Shanghai & Yiwu, China</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Jiatao Industry (Shanghai) Co., Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
